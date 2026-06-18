@@ -747,12 +747,24 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 }
 .urg-fire{font-size:1.3rem}
 .urg-text{
-  font-family:'Orbitron',sans-serif;font-weight:700;
-  font-size:clamp(.88rem,2.2vw,1rem);letter-spacing:.04em;
-  color:#fff;flex:1;text-align:center;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  flex:1;flex-wrap:wrap;
 }
-.urg-text s{opacity:.6;text-decoration:line-through}
-.urg-text strong{font-weight:900;font-size:1.15em}
+.urg-de{
+  font-family:'Orbitron',sans-serif;font-size:clamp(.82rem,2vw,.92rem);
+  font-weight:500;color:rgba(255,255,255,.85);
+}
+.urg-old{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1rem,2.5vw,1.15rem);
+  font-weight:700;color:#fff;text-decoration:line-through;
+  text-decoration-color:rgba(255,255,255,.7);text-decoration-thickness:2px;
+}
+.urg-arrow{color:rgba(255,255,255,.7);font-size:1.1rem}
+.urg-new{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.2rem,3vw,1.4rem);
+  font-weight:900;color:#fff;
+  text-shadow:0 0 20px rgba(255,255,255,.4);
+}
 .urg-tag{
   font-family:'Orbitron',sans-serif;font-size:clamp(.6rem,1.5vw,.68rem);
   font-weight:900;letter-spacing:.14em;text-transform:uppercase;
@@ -788,10 +800,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   animation:vagaGlow 1.4s infinite;
   display:inline-block;transition:transform .25s;
 }
-.scar-of{
-  font-family:'Orbitron',sans-serif;font-size:clamp(1rem,3vw,1.4rem);
-  color:rgba(239,68,68,.4);font-weight:700;
-}
+.scar-of{display:none}
 .scar-bar-wrap{flex:1;min-width:160px}
 .scar-bar-label{
   font-size:clamp(.78rem,1.8vw,.84rem);font-weight:600;letter-spacing:.1em;
@@ -822,8 +831,8 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 }
 .price-anch-left{display:flex;flex-direction:column;gap:2px}
 .anch-label{
-  font-size:.72rem;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(255,255,255,.6);
+  font-size:.82rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:#FFFFFF;
 }
 .anch-orig{
   font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,4vw,1.8rem);
@@ -1067,7 +1076,11 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
       <!-- URGÊNCIA -->
       <div class="price-urg">
         <span class="urg-fire">🔥</span>
-        <span class="urg-text">De <s>R$597</s> por apenas <strong>R$297</strong></span>
+        <div class="urg-text">
+          <span class="urg-de">De <span class="urg-old">R$597</span></span>
+          <span class="urg-arrow">→</span>
+          <span class="urg-new">R$297</span>
+        </div>
         <span class="urg-tag">OFERTA LIMITADA</span>
       </div>
 
@@ -1078,7 +1091,6 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
             <div class="scar-label">⚠ VAGAS RESTANTES</div>
             <div class="scar-num-wrap">
               <span id="vaga-count">9</span>
-              <span class="scar-of">/ 20</span>
             </div>
           </div>
           <div class="scar-bar-wrap">
