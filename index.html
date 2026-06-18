@@ -240,7 +240,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   color:var(--fire);line-height:1;display:block;
   text-shadow:0 0 16px rgba(255,85,0,.4);
 }
-.hst-l{font-size:clamp(.62rem,1.5vw,.68rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:3px;display:block}
+.hst-l{font-size:clamp(.62rem,1.5vw,.68rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#808090;margin-top:3px;display:block}
 
 /* ══════════════════════════════
    VSL
@@ -282,7 +282,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   color:var(--fire);display:block;margin-bottom:4px;
   text-shadow:0 0 20px rgba(255,85,0,.35);
 }
-.sc-l{font-size:clamp(.62rem,1.5vw,.68rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.sc-l{font-size:clamp(.62rem,1.5vw,.68rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#808090}
 
 /* ══════════════════════════════
    DOR
@@ -324,23 +324,23 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 .who-c.yes::after{background:linear-gradient(90deg,var(--fire),transparent)}
 .who-c.no::after{background:linear-gradient(90deg,var(--dim),transparent)}
 .who-ttl{
-  font-size:clamp(.68rem,1.8vw,.72rem);font-weight:700;
+  font-size:clamp(.76rem,1.8vw,.8rem);font-weight:700;
   letter-spacing:.2em;text-transform:uppercase;
-  padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--line);
+  padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,.35);
 }
 .who-c.yes .who-ttl{color:var(--fire)}
-.who-c.no .who-ttl{color:var(--dim)}
+.who-c.no .who-ttl{color:#808090}
 .who-items{display:flex;flex-direction:column;gap:clamp(10px,2vw,13px)}
 .who-it{display:flex;gap:12px;font-size:clamp(1rem,2.2vw,1.05rem);color:#C0C2CC;font-weight:300;line-height:1.5;align-items:flex-start}
 .wi-m{flex-shrink:0;font-size:.8rem;margin-top:3px;font-weight:700}
 .who-c.yes .wi-m{color:var(--fire)}
-.who-c.no .wi-m{color:var(--dim)}
+.who-c.no .wi-m{color:#808090}
 
 /* ══════════════════════════════
    MÓDULOS
 ══════════════════════════════ */
 .mod-meta{display:flex;gap:clamp(16px,3vw,24px);flex-wrap:wrap;margin:6px 0 clamp(28px,5vw,44px)}
-.mod-mi{font-size:clamp(.8rem,2vw,.85rem);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.mod-mi{font-size:clamp(.84rem,2vw,.9rem);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .mod-mi b{color:var(--fire)}
 .mod-list{display:flex;flex-direction:column;gap:2px}
 .mod{
@@ -357,7 +357,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 }
 .mod-nm{font-size:clamp(1rem,2.2vw,1.05rem);font-weight:500;color:#F2F2F5}
 .mod-ct{font-size:clamp(.82rem,1.8vw,.88rem);color:#8A8D98;white-space:nowrap;flex-shrink:0}
-.mod-ch{font-size:.65rem;color:var(--dim);transition:transform .28s,color .2s;flex-shrink:0}
+.mod-ch{font-size:.65rem;color:#808090;transition:transform .28s,color .2s;flex-shrink:0}
 .mod.open .mod-ch{transform:rotate(180deg);color:var(--fire)}
 .mod-body{display:none;padding:0 clamp(18px,4vw,24px) clamp(14px,3vw,18px) clamp(72px,10vw,98px);border-top:1px solid var(--line)}
 .mod.open .mod-body{display:block}
@@ -469,7 +469,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   font-size:clamp(1.4rem,3.5vw,2rem);color:var(--fire);line-height:1;
   text-shadow:0 0 16px rgba(255,85,0,.4);
 }
-.pn-l{font-size:clamp(.6rem,1.5vw,.65rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.pn-l{font-size:clamp(.6rem,1.5vw,.65rem);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#808090;margin-top:4px}
 
 /* ══════════════════════════════
    DEPOIMENTOS
@@ -526,7 +526,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 .bon-t{font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(.9rem,2.2vw,1rem);letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
 .bon-d{font-size:clamp(.98rem,2vw,1.05rem);color:#B8BAC8;font-weight:300;line-height:1.6;margin-bottom:10px}
 .bon-v{font-size:clamp(.86rem,1.8vw,.92rem);color:#8A8D98}
-.bon-v s{color:rgba(255,255,255,.1)}
+.bon-v s{color:rgba(255,255,255,.35)}
 .bon-v b{color:var(--fire);text-shadow:0 0 8px rgba(255,85,0,.3)}
 
 /* ══════════════════════════════
@@ -583,12 +583,12 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   display:flex;gap:10px;align-items:flex-start;line-height:1.4;
 }
 .price-items li::before{content:"✓";color:var(--fire);font-weight:700;flex-shrink:0;font-size:.78rem;margin-top:2px;text-shadow:0 0 6px var(--fire)}
-.price-tot{font-size:clamp(.78rem,1.8vw,.84rem);color:var(--dim);margin-top:clamp(14px,3vw,18px)}
-.price-tot s{color:rgba(255,255,255,.1)}
+.price-tot{font-size:clamp(.95rem,2vw,1rem);color:rgba(255,255,255,.65);margin-top:clamp(16px,3vw,22px);font-weight:400}
+.price-tot s{color:rgba(255,255,255,.35)}
 
 .price-r{padding:clamp(28px,5vw,40px) clamp(20px,4vw,36px);display:flex;flex-direction:column;align-items:center;text-align:center}
 .anch{margin-bottom:clamp(10px,2vw,14px)}
-.anch-from{font-size:clamp(.72rem,1.8vw,.78rem);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.anch-from{font-size:clamp(.72rem,1.8vw,.78rem);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#808090}
 .anch-orig{
   font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,4vw,2rem);
   font-weight:700;color:rgba(255,255,255,.25);text-decoration:line-through;
@@ -624,10 +624,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 }
 .btn-buy:hover{filter:brightness(1.1)}
 .pbadges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
-.pb{
-  font-size:clamp(.68rem,1.5vw,.72rem);font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--dim);background:var(--bg);padding:4px 9px;border:1px solid var(--line);
-}
+.pb{font-size:clamp(.82rem,1.8vw,.88rem);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);padding:5px 12px;border:1px solid rgba(255,255,255,.15);border-radius:2px}
 
 /* ══════════════════════════════
    GARANTIA
@@ -655,7 +652,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 .faq{background:var(--panel);border-left:2px solid transparent;cursor:pointer;transition:border-color .2s,background .2s}
 .faq:hover,.faq.open{border-left-color:var(--fire);background:var(--bg2)}
 .fq{padding:clamp(16px,3vw,20px) clamp(18px,3vw,22px);display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:clamp(1.02rem,2.2vw,1.08rem);font-weight:400;color:#F2F2F5;user-select:none}
-.fa-arr{font-size:.65rem;color:var(--dim);transition:transform .28s,color .2s;flex-shrink:0}
+.fa-arr{font-size:.65rem;color:#808090;transition:transform .28s,color .2s;flex-shrink:0}
 .faq.open .fa-arr{transform:rotate(180deg);color:var(--fire)}
 .fa{display:none;padding:0 clamp(18px,3vw,22px) clamp(14px,3vw,18px);font-size:clamp(1rem,2vw,1.05rem);color:#B8BAC8;font-weight:300;line-height:1.75;border-top:1px solid var(--line)}
 .fa p{padding-top:13px}
@@ -686,7 +683,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 }
 .final-h b{color:var(--fire);text-shadow:0 0 40px rgba(255,85,0,.5),0 0 80px rgba(255,85,0,.2)}
 .final-p{font-size:clamp(1.05rem,2.5vw,1.1rem);color:#B8BAC8;font-weight:300;line-height:1.75;margin-bottom:clamp(28px,5vw,36px)}
-.final-g{margin-top:14px;font-size:clamp(.78rem,1.8vw,.84rem);color:var(--dim);font-weight:300}
+.final-g{margin-top:14px;font-size:clamp(.84rem,1.8vw,.9rem);color:rgba(255,255,255,.55);font-weight:300}
 .final-g b{color:var(--fire);font-weight:600}
 
 /* ══════════════════════════════
@@ -710,9 +707,9 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 .foot-logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(.9rem,2vw,1rem);letter-spacing:.1em;text-transform:uppercase}
 .foot-logo span{color:var(--fire);text-shadow:0 0 10px rgba(255,85,0,.3)}
 .foot-links{display:flex;gap:clamp(14px,3vw,20px)}
-.foot-links a{font-size:clamp(.78rem,1.8vw,.84rem);color:var(--dim);transition:color .2s}
+.foot-links a{font-size:clamp(.78rem,1.8vw,.84rem);color:#808090;transition:color .2s}
 .foot-links a:hover{color:var(--fire)}
-.foot-copy{font-size:clamp(.68rem,1.5vw,.72rem);color:rgba(255,255,255,.15)}
+.foot-copy{font-size:clamp(.72rem,1.5vw,.78rem);color:rgba(255,255,255,.35)}
 
 /* WhatsApp */
 .wa-btn{position:fixed;bottom:clamp(20px,4vw,28px);right:clamp(20px,4vw,28px);z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;transition:transform .2s;animation:waPulse 2.5s infinite}
@@ -797,8 +794,8 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 }
 .scar-bar-wrap{flex:1;min-width:160px}
 .scar-bar-label{
-  font-size:clamp(.72rem,1.8vw,.78rem);font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;
+  font-size:clamp(.78rem,1.8vw,.84rem);font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:8px;
 }
 .scar-bar-track{
   height:10px;background:rgba(255,255,255,.08);
@@ -825,12 +822,12 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 }
 .price-anch-left{display:flex;flex-direction:column;gap:2px}
 .anch-label{
-  font-size:.68rem;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(255,255,255,.35);
+  font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
 }
 .anch-orig{
   font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,4vw,1.8rem);
-  font-weight:700;color:rgba(255,255,255,.22);text-decoration:line-through;
+  font-weight:700;color:rgba(255,255,255,.45);text-decoration:line-through;
 }
 .anch-off{
   font-family:'Orbitron',sans-serif;font-weight:900;
@@ -845,13 +842,13 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   width:100%;margin-bottom:clamp(22px,4vw,30px);
 }
 .price-por-label{
-  font-family:'Orbitron',sans-serif;font-size:clamp(.78rem,2vw,.86rem);
-  font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.45);
+  font-family:'Orbitron',sans-serif;font-size:clamp(.82rem,2vw,.9rem);
+  font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.75);
   margin-bottom:2px;
 }
 .price-install-label{
   font-size:clamp(.95rem,2.5vw,1.05rem);
-  color:rgba(255,255,255,.45);margin-bottom:4px;
+  color:rgba(255,255,255,.7);margin-bottom:4px;
 }
 .pbig{
   font-family:'Orbitron',sans-serif;font-weight:900;
@@ -860,11 +857,11 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   letter-spacing:-.02em;
   text-shadow:0 0 50px rgba(255,255,255,.15);
 }
-.pbig sup{font-size:clamp(1.8rem,5vw,2.8rem);vertical-align:super;color:rgba(255,255,255,.55);margin-right:3px}
-.pbig .cents{font-size:clamp(1.5rem,4vw,2.2rem);vertical-align:super;color:rgba(255,255,255,.55)}
+.pbig sup{font-size:clamp(1.8rem,5vw,2.8rem);vertical-align:super;color:rgba(255,255,255,.8);margin-right:3px}
+.pbig .cents{font-size:clamp(1.5rem,4vw,2.2rem);vertical-align:super;color:rgba(255,255,255,.8)}
 .price-vista{
-  font-size:clamp(1.02rem,2.5vw,1.12rem);
-  color:rgba(255,255,255,.5);margin-top:8px;
+  font-size:clamp(1.05rem,2.5vw,1.15rem);
+  color:rgba(255,255,255,.75);margin-top:8px;
 }
 .price-vista strong{color:var(--white);font-weight:700;font-size:1.25em}
 
@@ -1112,7 +1109,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
             <li>Acesso vitalício + atualizações</li>
             <li>Suporte exclusivo via WhatsApp</li>
           </ul>
-          <div class="price-tot">Total em bônus: <s>R$ 378</s> incluso</div>
+          <div class="price-tot" style="font-size:1rem;color:rgba(255,255,255,.65);margin-top:18px">Total em bônus: <s style="color:rgba(255,255,255,.35)">R$ 378</s> incluso</div>
         </div>
         <div class="price-r">
           <!-- Ancoragem -->
