@@ -136,6 +136,9 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   padding:clamp(80px,12vw,120px) 0 clamp(60px,8vw,80px);
   isolation:isolate;
 }
+@media(max-width:480px){
+  .hero{padding-bottom:clamp(200px,48vw,280px);align-items:flex-start;padding-top:60px}
+}
 /* Foto */
 .hero-photo{
   position:absolute;top:0;right:0;
@@ -739,14 +742,15 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 @media(max-width:480px){
   .hero-h{font-size:2.3rem}
   .hero-photo{
-    width:100%;height:60%;top:auto;bottom:0;
+    width:100%;height:52%;top:auto;bottom:0;
     opacity:1;border:none;outline:none;box-shadow:none;
-    filter:brightness(.85) contrast(1.1) saturate(.9);
+    filter:brightness(.88) contrast(1.1) saturate(.9);
+    background-position:top center;
   }
   .hero-photo::after{
     background:
-      linear-gradient(to top,var(--bg) 0%,rgba(8,8,9,.7) 35%,rgba(8,8,9,.2) 65%,transparent 100%),
-      linear-gradient(to bottom,var(--bg) 0%,rgba(8,8,9,.3) 12%,transparent 25%);
+      linear-gradient(to top,var(--bg) 0%,rgba(8,8,9,.65) 30%,rgba(8,8,9,.1) 60%,transparent 100%),
+      linear-gradient(to bottom,var(--bg) 0%,rgba(8,8,9,.2) 10%,transparent 22%);
   }
   .hero-stats{width:100%;display:grid;grid-template-columns:repeat(2,1fr);border:none;background:transparent;gap:1px}
   .hst{border:1px solid var(--lb);background:rgba(255,85,0,.06)}
@@ -937,7 +941,15 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   </div>
 </div>
 
-<div class="div-line"></div>
+<!-- CTA APÓS VSL -->
+<div style="text-align:center;padding:clamp(24px,5vw,36px) clamp(20px,5vw,40px) 0;position:relative;z-index:1">
+  <a href="#preco" class="btn-main pulse" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'});return false"
+     style="font-size:clamp(.95rem,2.5vw,1.1rem);padding:clamp(16px,3.5vw,20px) clamp(32px,6vw,56px);display:inline-block">
+    Quero o método agora
+  </a>
+</div>
+
+<div class="div-line" style="margin-top:clamp(24px,5vw,36px)"></div>
 
 <!-- STATS -->
 <div class="sbar">
