@@ -568,13 +568,13 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   animation:vagaGlow 1.4s infinite;
 }
 @keyframes vagaGlow{0%,100%{text-shadow:0 0 20px rgba(239,68,68,.5)}50%{text-shadow:0 0 40px rgba(239,68,68,.9),0 0 80px rgba(239,68,68,.2)}}
-.price-bod{display:grid;grid-template-columns:1fr 1fr;position:relative;z-index:1}
+.price-bod{display:flex;flex-direction:column;position:relative;z-index:1}
 @media(max-width:580px){.price-bod{grid-template-columns:1fr}}
-.price-l{padding:clamp(24px,5vw,36px) clamp(20px,4vw,32px);border-right:1px solid var(--line)}
+.price-l{padding:clamp(24px,5vw,36px) clamp(20px,4vw,36px);border-bottom:1px solid var(--line)}
 @media(max-width:580px){.price-l{border-right:none;border-bottom:1px solid var(--line)}}
 .price-l h3{
-  font-family:'Orbitron',sans-serif;font-size:clamp(.75rem,1.8vw,.84rem);font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;margin-bottom:clamp(14px,3vw,20px);
+  font-family:'Orbitron',sans-serif;font-size:clamp(.9rem,2vw,1rem);font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:clamp(16px,3vw,22px);
   color:var(--fire);text-shadow:0 0 8px rgba(255,85,0,.3);
 }
 .price-items{list-style:none;display:flex;flex-direction:column;gap:clamp(7px,1.5vw,9px)}
@@ -586,41 +586,44 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 .price-tot{font-size:clamp(.78rem,1.8vw,.84rem);color:var(--dim);margin-top:clamp(14px,3vw,18px)}
 .price-tot s{color:rgba(255,255,255,.1)}
 
-.price-r{padding:clamp(24px,5vw,36px) clamp(20px,4vw,32px);display:flex;flex-direction:column;align-items:flex-start}
+.price-r{padding:clamp(28px,5vw,40px) clamp(20px,4vw,36px);display:flex;flex-direction:column;align-items:center;text-align:center}
 .anch{margin-bottom:clamp(10px,2vw,14px)}
 .anch-from{font-size:clamp(.72rem,1.8vw,.78rem);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .anch-orig{
-  font-family:'Orbitron',sans-serif;font-size:clamp(1.1rem,3vw,1.4rem);
-  font-weight:700;color:var(--dim);text-decoration:line-through;
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:700;color:rgba(255,255,255,.25);text-decoration:line-through;
 }
 .anch-off{
-  display:inline-block;margin-left:10px;
-  background:var(--lo);color:var(--fire);
-  font-size:clamp(.62rem,1.5vw,.68rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  padding:3px 9px;border:1px solid var(--lb);vertical-align:middle;
+  display:inline-block;margin-left:12px;
+  background:linear-gradient(135deg,var(--fire),var(--fire2));
+  color:#fff;font-family:'Orbitron',sans-serif;
+  font-size:clamp(.78rem,2vw,.88rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 14px;vertical-align:middle;
 }
 .pfrom{font-size:clamp(.72rem,1.8vw,.78rem);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
 .pinst{font-size:clamp(.92rem,2.2vw,1rem);color:var(--mid);font-weight:300}
 .pbig{
   font-family:'Orbitron',sans-serif;font-weight:900;
-  font-size:clamp(3.6rem,8vw,5rem);line-height:.88;color:var(--white);margin:3px 0;
-  text-shadow:0 0 24px rgba(255,255,255,.08);
+  font-size:clamp(4.5rem,12vw,6.5rem);line-height:.88;color:var(--white);margin:4px 0;
+  letter-spacing:-.02em;
+  text-shadow:0 0 40px rgba(255,255,255,.15);
 }
-.pbig sup{font-size:clamp(1.4rem,3vw,1.8rem);vertical-align:super;color:var(--mid);margin-right:2px}
-.por{font-size:clamp(.9rem,2vw,.96rem);color:var(--mid);font-weight:300;margin-bottom:clamp(20px,4vw,28px)}
-.por b{color:var(--white);font-weight:500}
+.pbig sup{font-size:clamp(1.8rem,4vw,2.5rem);vertical-align:super;color:rgba(255,255,255,.5);margin-right:2px}
+.por{font-size:clamp(1rem,2.5vw,1.1rem);color:rgba(255,255,255,.55);font-weight:300;margin-bottom:clamp(24px,5vw,32px)}
+.por b{color:var(--white);font-weight:700;font-size:1.2em}
 .btn-buy{
   display:block;width:100%;
-  font-family:'Barlow',sans-serif;font-weight:700;
-  font-size:clamp(.9rem,2.2vw,1rem);letter-spacing:.1em;text-transform:uppercase;
-  color:#fff;background:var(--fire);
-  padding:clamp(15px,3vw,18px) 20px;text-align:center;border:none;cursor:pointer;
-  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
-  margin-bottom:clamp(10px,2vw,14px);
-  animation:btnPulse 2s infinite;transition:background .2s;
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(1rem,2.5vw,1.1rem);letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(135deg,var(--fire),var(--fire2));
+  padding:clamp(18px,4vw,22px) 20px;text-align:center;border:none;cursor:pointer;
+  margin-bottom:clamp(14px,3vw,20px);
+  animation:btnPulse 2s infinite;transition:filter .2s;
+  text-shadow:0 1px 4px rgba(0,0,0,.3);
+  box-shadow:0 4px 32px rgba(255,85,0,.4);
 }
-.btn-buy:hover{background:var(--fire2)}
-.pbadges{display:flex;gap:7px;flex-wrap:wrap}
+.btn-buy:hover{filter:brightness(1.1)}
+.pbadges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
 .pb{
   font-size:clamp(.68rem,1.5vw,.72rem);font-weight:600;letter-spacing:.06em;text-transform:uppercase;
   color:var(--dim);background:var(--bg);padding:4px 9px;border:1px solid var(--line);
@@ -935,13 +938,11 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   <div class="w">
     <div class="tc rv"><div class="tag">Investimento</div><h2 class="sh">Acesso completo ao PD10X</h2></div>
     <div class="price-card rv d1">
-      <div class="price-urg">▸ De R$597 por R$297 — oferta por tempo limitado</div>
+      <div class="price-urg">🔥 De R$597 por apenas R$297 — Oferta por tempo limitado</div>
       <div id="scarcity-wrap">
-        <div class="scarcity-label">▸ Vagas restantes nesta turma</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px">
-          <span id="vaga-count">9</span>
-          <span style="font-size:clamp(.88rem,2vw,1rem);color:rgba(240,240,242,.4);font-weight:300;text-align:left;line-height:1.4">vagas<br>disponíveis</span>
-        </div>
+        <div class="scarcity-label">⚠ Vagas restantes nesta turma</div>
+        <span id="vaga-count">9</span>
+        <div class="scarcity-sub">vagas disponíveis</div>
       </div>
       <div class="price-bod">
         <div class="price-l">
