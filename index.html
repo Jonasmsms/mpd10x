@@ -525,9 +525,9 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 }
 .bon-t{font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(.9rem,2.2vw,1rem);letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
 .bon-d{font-size:clamp(.98rem,2vw,1.05rem);color:#D0D2DA;font-weight:300;line-height:1.6;margin-bottom:10px}
-.bon-v{font-size:clamp(.86rem,1.8vw,.92rem);color:#8A8D98}
-.bon-v s{color:rgba(255,255,255,.75)}
-.bon-v b{color:var(--fire);text-shadow:0 0 8px rgba(255,85,0,.3)}
+.bon-v{font-size:clamp(.92rem,1.8vw,1rem);color:#FFFFFF;font-weight:400}
+.bon-v s{color:rgba(255,255,255,.45);text-decoration:line-through}
+.bon-v b{color:var(--fire);font-weight:700;font-size:1.05em}
 
 /* ══════════════════════════════
    PRICING
@@ -544,11 +544,28 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   pointer-events:none;
 }
 .price-urg{
-  background:linear-gradient(135deg,rgba(255,85,0,.18),rgba(255,85,0,.06));
-  border-bottom:1px solid var(--lb);
-  padding:clamp(10px,2vw,13px) clamp(20px,4vw,28px);
-  font-size:clamp(.78rem,2vw,.84rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--fire);
+  background:linear-gradient(135deg,#CC3300,#FF5500);
+  padding:clamp(16px,3vw,20px) clamp(20px,4vw,32px);
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  text-align:center;
+}
+.urg-label{font-size:clamp(.82rem,2vw,.9rem);font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.04em}
+.urg-old-price{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.1rem,3vw,1.3rem);
+  font-weight:700;color:#fff;
+  text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(255,255,255,.8);
+}
+.urg-arrow{color:rgba(255,255,255,.8);font-size:1.2rem;font-weight:300}
+.urg-new-price{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.3rem,3.5vw,1.6rem);
+  font-weight:900;color:#fff;
+  text-shadow:0 0 20px rgba(255,255,255,.4);
+}
+.urg-badge{
+  font-family:'Orbitron',sans-serif;font-size:clamp(.62rem,1.5vw,.7rem);
+  font-weight:900;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(0,0,0,.25);color:#fff;
+  padding:5px 12px;border:1px solid rgba(255,255,255,.3);white-space:nowrap;
 }
 /* Contador */
 #scarcity-wrap{
@@ -562,7 +579,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
   color:#EF4444;margin-bottom:8px;
 }
 #vaga-count{
-  font-family:'Orbitron',sans-serif;font-size:clamp(2.2rem,5vw,2.8rem);
+  font-family:'Orbitron',sans-serif;font-size:clamp(5rem,14vw,7rem);
   color:#EF4444;line-height:1;display:inline-block;transition:transform .25s;
   text-shadow:0 0 20px rgba(239,68,68,.5);
   animation:vagaGlow 1.4s infinite;
