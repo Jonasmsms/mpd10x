@@ -1067,7 +1067,18 @@ document.querySelectorAll('[data-target]').forEach(function(el){cio.observe(el)}
 
 function tM(el){var o=el.classList.contains('open');document.querySelectorAll('.mod').forEach(function(m){m.classList.remove('open')});if(!o)el.classList.add('open')}
 function tF(el){var o=el.classList.contains('open');document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});if(!o)el.classList.add('open')}
-function playDep(thumb,id){var wrap=thumb.parentElement;var iframe=document.createElement('iframe');iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';iframe.allow='autoplay;encrypted-media';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none';thumb.style.display='none';wrap.appendChild(iframe)}
+function playDep(thumb,id){
+  var wrap=thumb.parentElement;
+  // Garante que o wrap tem position relative e aspect-ratio
+  wrap.style.cssText='position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000';
+  var iframe=document.createElement('iframe');
+  iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+  iframe.allow='autoplay;encrypted-media';
+  iframe.allowFullscreen=true;
+  iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:none';
+  thumb.style.display='none';
+  wrap.appendChild(iframe);
+}
 
 (function(){
   var el=document.getElementById('vaga-count');
