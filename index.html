@@ -740,6 +740,134 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   .who-g,.bonus-g{grid-template-columns:1fr}
   .dep-g{grid-template-columns:1fr}
 }
+
+/* ═══ URGÊNCIA ═══ */
+.price-urg{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  background:linear-gradient(135deg,#CC3300,#FF5500);
+  padding:clamp(14px,3vw,18px) clamp(16px,4vw,28px);
+  border-bottom:none;
+}
+.urg-fire{font-size:1.3rem}
+.urg-text{
+  font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:clamp(.88rem,2.2vw,1rem);letter-spacing:.04em;
+  color:#fff;flex:1;text-align:center;
+}
+.urg-text s{opacity:.6;text-decoration:line-through}
+.urg-text strong{font-weight:900;font-size:1.15em}
+.urg-tag{
+  font-family:'Orbitron',sans-serif;font-size:clamp(.6rem,1.5vw,.68rem);
+  font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(0,0,0,.3);color:#fff;
+  padding:4px 10px;border:1px solid rgba(255,255,255,.3);
+  white-space:nowrap;
+}
+
+/* ═══ ESCASSEZ ═══ */
+#scarcity-wrap{
+  padding:clamp(18px,4vw,24px) clamp(16px,4vw,28px);
+  background:rgba(220,38,38,.08);
+  border-bottom:1px solid rgba(220,38,38,.2);
+  position:relative;
+}
+#scarcity-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#EF4444,transparent);
+}
+.scar-inner{display:flex;align-items:center;gap:clamp(16px,4vw,32px);flex-wrap:wrap}
+.scar-left{flex-shrink:0}
+.scar-label{
+  font-family:'Orbitron',sans-serif;font-size:clamp(.7rem,1.8vw,.78rem);
+  font-weight:700;letter-spacing:.14em;color:#EF4444;
+  text-shadow:0 0 10px rgba(239,68,68,.5);margin-bottom:4px;
+}
+.scar-num-wrap{display:flex;align-items:baseline;gap:4px}
+#vaga-count{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(3.5rem,10vw,5rem);
+  color:#EF4444;line-height:1;
+  text-shadow:0 0 30px rgba(239,68,68,.7);
+  animation:vagaGlow 1.4s infinite;
+  display:inline-block;transition:transform .25s;
+}
+.scar-of{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1rem,3vw,1.4rem);
+  color:rgba(239,68,68,.4);font-weight:700;
+}
+.scar-bar-wrap{flex:1;min-width:160px}
+.scar-bar-label{
+  font-size:clamp(.72rem,1.8vw,.78rem);font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;
+}
+.scar-bar-track{
+  height:10px;background:rgba(255,255,255,.08);
+  border-radius:2px;overflow:hidden;margin-bottom:6px;
+}
+.scar-bar-fill{
+  height:100%;width:55%;
+  background:linear-gradient(90deg,#EF4444,#FF6B6B);
+  box-shadow:0 0 10px rgba(239,68,68,.6);
+  border-radius:2px;
+  transition:width 1s ease;
+}
+.scar-bar-pct{
+  font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;
+  color:#EF4444;letter-spacing:.08em;
+}
+
+/* ═══ ANCORAGEM ═══ */
+.price-anch-row{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;margin-bottom:clamp(16px,3vw,22px);
+  padding-bottom:clamp(14px,3vw,18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.price-anch-left{display:flex;flex-direction:column;gap:2px}
+.anch-label{
+  font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+}
+.anch-orig{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,4vw,1.8rem);
+  font-weight:700;color:rgba(255,255,255,.22);text-decoration:line-through;
+}
+.anch-off{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(.85rem,2.2vw,1rem);letter-spacing:.1em;
+  background:linear-gradient(135deg,var(--fire),var(--fire2));
+  color:#fff;padding:8px 16px;
+  box-shadow:0 0 20px rgba(255,85,0,.4);
+}
+
+/* ═══ PREÇO PRINCIPAL ═══ */
+.price-main-block{
+  width:100%;margin-bottom:clamp(22px,4vw,30px);
+}
+.price-por-label{
+  font-family:'Orbitron',sans-serif;font-size:clamp(.78rem,2vw,.86rem);
+  font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.45);
+  margin-bottom:2px;
+}
+.price-install-label{
+  font-size:clamp(.95rem,2.5vw,1.05rem);
+  color:rgba(255,255,255,.45);margin-bottom:4px;
+}
+.pbig{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:clamp(4.5rem,14vw,7rem);
+  line-height:.88;color:var(--white);margin:4px 0;
+  letter-spacing:-.02em;
+  text-shadow:0 0 50px rgba(255,255,255,.15);
+}
+.pbig sup{font-size:clamp(1.8rem,5vw,2.8rem);vertical-align:super;color:rgba(255,255,255,.55);margin-right:3px}
+.pbig .cents{font-size:clamp(1.5rem,4vw,2.2rem);vertical-align:super;color:rgba(255,255,255,.55)}
+.price-vista{
+  font-size:clamp(1.02rem,2.5vw,1.12rem);
+  color:rgba(255,255,255,.5);margin-top:8px;
+}
+.price-vista strong{color:var(--white);font-weight:700;font-size:1.25em}
+
 </style>
 </head>
 <body>
@@ -938,12 +1066,35 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
   <div class="w">
     <div class="tc rv"><div class="tag">Investimento</div><h2 class="sh">Acesso completo ao PD10X</h2></div>
     <div class="price-card rv d1">
-      <div class="price-urg">🔥 De R$597 por apenas R$297 — Oferta por tempo limitado</div>
-      <div id="scarcity-wrap">
-        <div class="scarcity-label">⚠ Vagas restantes nesta turma</div>
-        <span id="vaga-count">9</span>
-        <div class="scarcity-sub">vagas disponíveis</div>
+
+      <!-- URGÊNCIA -->
+      <div class="price-urg">
+        <span class="urg-fire">🔥</span>
+        <span class="urg-text">De <s>R$597</s> por apenas <strong>R$297</strong></span>
+        <span class="urg-tag">OFERTA LIMITADA</span>
       </div>
+
+      <!-- ESCASSEZ -->
+      <div id="scarcity-wrap">
+        <div class="scar-inner">
+          <div class="scar-left">
+            <div class="scar-label">⚠ VAGAS RESTANTES</div>
+            <div class="scar-num-wrap">
+              <span id="vaga-count">9</span>
+              <span class="scar-of">/ 20</span>
+            </div>
+          </div>
+          <div class="scar-bar-wrap">
+            <div class="scar-bar-label">Ocupação da turma</div>
+            <div class="scar-bar-track">
+              <div class="scar-bar-fill" id="scar-fill"></div>
+            </div>
+            <div class="scar-bar-pct" id="scar-pct">55%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO + PREÇO -->
       <div class="price-bod">
         <div class="price-l">
           <h3>O que está incluso</h3>
@@ -964,20 +1115,30 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
           <div class="price-tot">Total em bônus: <s>R$ 378</s> incluso</div>
         </div>
         <div class="price-r">
-          <div class="anch">
-            <div class="anch-from">De</div>
-            <span class="anch-orig">R$597</span>
+          <!-- Ancoragem -->
+          <div class="price-anch-row">
+            <div class="price-anch-left">
+              <span class="anch-label">DE</span>
+              <span class="anch-orig">R$597</span>
+            </div>
             <span class="anch-off">-50% OFF</span>
           </div>
-          <div class="pfrom">Por apenas</div>
-          <div class="pinst">12x de</div>
-          <div class="pbig"><sup>R$</sup>30<sup style="font-size:clamp(1.2rem,2.5vw,1.6rem)">,72</sup></div>
-          <div class="por">ou <b>R$ 297</b> à vista no PIX</div>
-          <a href="https://pay.kiwify.com.br/226HRe8" target="_blank" class="btn-buy">Garantir minha vaga agora</a>
+
+          <!-- Preço principal -->
+          <div class="price-main-block">
+            <div class="price-por-label">POR APENAS</div>
+            <div class="price-install-label">12x de</div>
+            <div class="pbig"><sup>R$</sup>30<sup class="cents">,72</sup></div>
+            <div class="price-vista">ou <strong>R$ 297</strong> à vista no PIX</div>
+          </div>
+
+          <a href="https://pay.kiwify.com.br/226HRe8" target="_blank" class="btn-buy">
+            🔒 Garantir minha vaga agora
+          </a>
           <div class="pbadges">
-            <span class="pb">▸ Seguro</span>
+            <span class="pb">✓ Compra segura</span>
             <span class="pb">💳 PIX · Cartão · Boleto</span>
-            <span class="pb">▸ Kiwify</span>
+            <span class="pb">✓ Kiwify</span>
           </div>
         </div>
       </div>
@@ -1081,12 +1242,23 @@ function playDep(thumb,id){
   wrap.appendChild(iframe);
 }
 
+
+// Atualiza barra de escassez
+function updateBar(vagas) {
+  var pct = Math.round(((20 - vagas) / 20) * 100);
+  var fill = document.getElementById('scar-fill');
+  var pctEl = document.getElementById('scar-pct');
+  if(fill) fill.style.width = pct + '%';
+  if(pctEl) pctEl.textContent = pct + '% ocupado';
+}
+updateBar(9);
+
 (function(){
   var el=document.getElementById('vaga-count');
   var label=document.querySelector('.scarcity-label');
   if(!el)return;
   var drops=[{delay:22000,val:8},{delay:48000,val:7},{delay:78000,val:6},{delay:108000,val:5},{delay:145000,val:4}];
-  function applyDrops(){drops.forEach(function(d){setTimeout(function(){el.textContent=d.val;el.style.transform='scale(1.3)';setTimeout(function(){el.style.transform='scale(1)'},280)},d.delay)})}
+  function applyDrops(){drops.forEach(function(d){setTimeout(function(){el.textContent=d.val;el.style.transform='scale(1.3)';setTimeout(function(){el.style.transform='scale(1)'},280);updateBar(d.val)},d.delay)})}
   applyDrops();
   setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000);
   setTimeout(function(){el.textContent='9';if(label)label.textContent='▸ Vagas restantes nesta turma';applyDrops();setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000)},208000);
