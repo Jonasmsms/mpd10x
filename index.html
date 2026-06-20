@@ -3,6 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1660742761748533');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Método PD10X',content_category:'Curso',value:47,currency:'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1660742761748533&ev=PageView&noscript=1"/></noscript>
+<!-- /Facebook Pixel -->
+
+<!-- Facebook CAPI -->
+<script>
+(function(){
+  var PID='1660742761748533';
+  var TK='EAAFPloE2qHUBRRUqTvEFXJqvkz7jkBpnmxUFzIeYP0bXU6tfKT6cC2PIAZBX5jZA2GJs4kYdnPcHMCkYIGj2GaJFCP47q3l405UYuJrZCtoQfDQcQYUL0rYMCvOpiQmQIbd8cOpYqF3iYDZBON5N3p4lATShiCTs03UEeTGjkUZANHIFWZAOcGBxPX9Wsi8XaMYgZDZD';
+  function send(n,d){
+    fetch('https://graph.facebook.com/v19.0/'+PID+'/events?access_token='+TK,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({data:[{event_name:n,event_time:Math.floor(Date.now()/1000),
+        action_source:'website',event_source_url:window.location.href,
+        user_data:{client_user_agent:navigator.userAgent,
+          fbp:(document.cookie.match('(^|;)\\s*_fbp=([^;]*)')||[])[2]||'',
+          fbc:(document.cookie.match('(^|;)\\s*_fbc=([^;]*)')||[])[2]||''},
+        custom_data:d||{}}]})
+    }).catch(function(){});
+  }
+  send('PageView');
+  send('ViewContent',{content_name:'Método PD10X',value:47,currency:'BRL'});
+  // Attach directly to each button — no bubbling issues
+  function attachPixel(){
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+      if(el._pixelBound) return;
+      el._pixelBound=true;
+      el.addEventListener('click',function(){
+        fbq('track','Contact');
+        send('Contact');
+      },{once:true});
+    });
+    document.querySelectorAll('a[href*="kiwify"]').forEach(function(el){
+      if(el._pixelBound) return;
+      el._pixelBound=true;
+      el.addEventListener('click',function(){
+        fbq('track','InitiateCheckout',{value:47,currency:'BRL'});
+        send('InitiateCheckout',{value:47,currency:'BRL'});
+      },{once:true});
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',attachPixel);}
+  else{attachPixel();}
+})();
+</script>
+<!-- /Facebook CAPI -->
 <title>Método PD10X — Multiplique o Faturamento do Seu Delivery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
