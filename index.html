@@ -24,7 +24,7 @@ function attachPixel(){
   document.querySelectorAll('a[href*="kiwify"]').forEach(function(el){
     if(el._pixelBound) return;
     el._pixelBound=true;
-    el.addEventListener('click',function(){fbq('track','InitiateCheckout',{value:47,currency:'BRL'})},{once:true});
+    el.addEventListener('click',function(){fbq('track','AddToWishlist',{content_name:'Método PD10X',value:47,currency:'BRL'})},{once:true});
   });
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',attachPixel);}
