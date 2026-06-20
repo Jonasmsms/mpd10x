@@ -1221,7 +1221,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
           <div class="scar-left">
             <div class="scar-label">⚠ VAGAS RESTANTES</div>
             <div class="scar-num-wrap">
-              <span id="vaga-count">9</span>
+              <span id="vaga-count">8</span>
             </div>
           </div>
           <div class="scar-bar-wrap">
@@ -1262,7 +1262,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
               <span class="anch-label">DE</span>
               <span class="anch-orig">R$597</span>
             </div>
-            <span class="anch-off">-50% OFF</span>
+            <span class="anch-off">-92% OFF</span>
           </div>
 
           <!-- Preço principal -->
@@ -1391,17 +1391,32 @@ function updateBar(vagas) {
   if(fill) fill.style.width = pct + '%';
   if(pctEl) pctEl.textContent = pct + '% ocupado';
 }
-updateBar(9);
+updateBar(8);
 
 (function(){
   var el=document.getElementById('vaga-count');
   var label=document.querySelector('.scarcity-label');
   if(!el)return;
-  var drops=[{delay:22000,val:8},{delay:48000,val:7},{delay:78000,val:6},{delay:108000,val:5},{delay:145000,val:4}];
-  function applyDrops(){drops.forEach(function(d){setTimeout(function(){el.textContent=d.val;el.style.transform='scale(1.3)';setTimeout(function(){el.style.transform='scale(1)'},280);updateBar(d.val)},d.delay)})}
-  applyDrops();
-  setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000);
-  setTimeout(function(){el.textContent='9';if(label)label.textContent='▸ Vagas restantes nesta turma';applyDrops();setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000)},208000);
+  // Primeiras 2 vagas caem rápido (1 por minuto, nos primeiros 2 min).
+  // As outras 5 caem aos poucos, em intervalos irregulares, ao longo dos 3 minutos seguintes.
+  var drops=[
+    {delay:60000,val:7},
+    {delay:120000,val:6},
+    {delay:150000,val:5},
+    {delay:191000,val:4},
+    {delay:226000,val:3},
+    {delay:262000,val:2},
+    {delay:296000,val:1}
+  ];
+  drops.forEach(function(d){
+    setTimeout(function(){
+      el.textContent=d.val;
+      el.style.transform='scale(1.3)';
+      setTimeout(function(){el.style.transform='scale(1)'},280);
+      updateBar(d.val);
+      if(d.val<=3 && label) label.textContent='▸ Últimas vagas com desconto de R$597 para R$47';
+    },d.delay);
+  });
 })();
 </script>
 </body>
