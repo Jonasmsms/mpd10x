@@ -1221,7 +1221,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
           <div class="scar-left">
             <div class="scar-label">⚠ VAGAS RESTANTES</div>
             <div class="scar-num-wrap">
-              <span id="vaga-count">8</span>
+              <span id="vaga-count">9</span>
             </div>
           </div>
           <div class="scar-bar-wrap">
@@ -1262,17 +1262,18 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
               <span class="anch-label">DE</span>
               <span class="anch-orig">R$597</span>
             </div>
-            <span class="anch-off">-92% OFF</span>
+            <span class="anch-off">-50% OFF</span>
           </div>
 
           <!-- Preço principal -->
           <div class="price-main-block">
             <div class="price-por-label">POR APENAS</div>
-            <div class="pbig"><sup>R$</sup>47</div>
-            <div class="price-vista">à vista no PIX — <strong style="font-size:1em">parcelamento no cartão disponível no checkout</strong></div>
+            <div class="price-install-label">11x de</div>
+            <div class="pbig"><sup>R$</sup>5<sup class="cents">,22</sup></div>
+            <div class="price-vista">ou <strong>R$ 47</strong> à vista no PIX</div>
           </div>
 
-          <a href="https://pay.kiwify.com.br/226HRe8" target="_blank" class="btn-buy">
+          <a href="https://pay.kiwify.com.br/o20BvTf" target="_blank" class="btn-buy">
             🔒 Garantir minha vaga agora
           </a>
           <div class="pbadges">
@@ -1320,7 +1321,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
     <div class="tag" style="justify-content:center"><span>Decisão</span></div>
     <h2 class="final-h">Seu delivery pode<br>faturar <b>10X mais</b></h2>
     <p class="final-p">A diferença entre um delivery estagnado e um que escala não é o produto — é o sistema de captação. O Método PD10X é esse sistema. 7 dias de garantia. O risco é todo nosso.</p>
-    <a href="https://pay.kiwify.com.br/226HRe8" target="_blank" class="btn-main pulse" style="font-size:clamp(.9rem,2.5vw,1rem)">Sim, quero multiplicar meu faturamento</a>
+    <a href="https://pay.kiwify.com.br/o20BvTf" target="_blank" class="btn-main pulse" style="font-size:clamp(.9rem,2.5vw,1rem)">Sim, quero multiplicar meu faturamento</a>
     <div class="final-g" style="margin-top:14px">▸ Garantia de <b>7 dias</b> &nbsp;·&nbsp; De R$597 por <b>R$297</b> à vista &nbsp;·&nbsp; Acesso imediato</div>
   </div>
 </section>
@@ -1391,32 +1392,17 @@ function updateBar(vagas) {
   if(fill) fill.style.width = pct + '%';
   if(pctEl) pctEl.textContent = pct + '% ocupado';
 }
-updateBar(8);
+updateBar(9);
 
 (function(){
   var el=document.getElementById('vaga-count');
   var label=document.querySelector('.scarcity-label');
   if(!el)return;
-  // Primeiras 2 vagas caem rápido (1 por minuto, nos primeiros 2 min).
-  // As outras 5 caem aos poucos, em intervalos irregulares, ao longo dos 3 minutos seguintes.
-  var drops=[
-    {delay:60000,val:7},
-    {delay:120000,val:6},
-    {delay:150000,val:5},
-    {delay:191000,val:4},
-    {delay:226000,val:3},
-    {delay:262000,val:2},
-    {delay:296000,val:1}
-  ];
-  drops.forEach(function(d){
-    setTimeout(function(){
-      el.textContent=d.val;
-      el.style.transform='scale(1.3)';
-      setTimeout(function(){el.style.transform='scale(1)'},280);
-      updateBar(d.val);
-      if(d.val<=3 && label) label.textContent='▸ Últimas vagas com desconto de R$597 para R$47';
-    },d.delay);
-  });
+  var drops=[{delay:22000,val:8},{delay:48000,val:7},{delay:78000,val:6},{delay:108000,val:5},{delay:145000,val:4}];
+  function applyDrops(){drops.forEach(function(d){setTimeout(function(){el.textContent=d.val;el.style.transform='scale(1.3)';setTimeout(function(){el.style.transform='scale(1)'},280);updateBar(d.val)},d.delay)})}
+  applyDrops();
+  setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000);
+  setTimeout(function(){el.textContent='9';if(label)label.textContent='▸ Vagas restantes nesta turma';applyDrops();setTimeout(function(){if(label)label.textContent='▸ Últimas vagas com desconto de R$597 para R$297'},148000)},208000);
 })();
 </script>
 </body>
