@@ -177,10 +177,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;line-height:
 .hero-photo{
   position:absolute;top:0;right:0;
   width:100%;height:100%;
-  background-image:url(https://jonasmsms.github.io/mpd10x/jonas-foto.jpg);
-  background-size:cover;background-position:top center;
-  filter:brightness(.55) contrast(1.1) saturate(.75);
-  background-position:center 15%;
+  overflow:hidden;
 }
 .hero-photo::after{
   content:'';position:absolute;inset:0;
@@ -1016,7 +1013,7 @@ footer{background:#060607;border-top:1px solid var(--lb);padding:clamp(24px,5vw,
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-photo"></div>
+  <div class="hero-photo"><img src="https://jonasmsms.github.io/mpd10x/jonas-foto.jpg" alt="" width="1023" height="1537" fetchpriority="high" decoding="sync" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(.55) contrast(1.1) saturate(.75)"></div>
   <div class="hero-grid"></div>
   <div class="hero-orb"></div>
   <div class="hero-bar"></div>
