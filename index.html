@@ -77,7 +77,53 @@
 <!-- VSL -->
 <div class="vsl-s" id="vsl">
   <div class="w">
-    <div class="vsl-lbl rv">Assista a apresentação completa antes de decidir</div>
+    <div class="vsl-lbl rv" style="flex-direction:column;gap:10px">
+  <span style="font-size:clamp(.78rem,2vw,.88rem);letter-spacing:.18em">ASSISTA A APRESENTAÇÃO COMPLETA ANTES DE DECIDIR</span>
+  <span id="viewer-bar" style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(.72rem,1.8vw,.8rem);letter-spacing:.1em;color:rgba(255,255,255,.75);font-family:'Barlow',sans-serif;font-weight:400;text-transform:none">
+    <span id="viewer-dot" style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;display:inline-block;flex-shrink:0"></span>
+    <span id="viewer-count" style="color:#fff;font-weight:600"></span>
+    <span>pessoas assistindo agora</span>
+  </span>
+</div>
+
+<style>
+@keyframes dotPulse{
+  0%,100%{opacity:1;box-shadow:0 0 4px #22c55e}
+  50%{opacity:.35;box-shadow:0 0 10px #22c55e}
+}
+#viewer-dot{animation:dotPulse 2.2s ease-in-out infinite}
+</style>
+
+<script>
+(function(){
+  var count = Math.floor(Math.random() * (580 - 510 + 1)) + 510;
+  var el = document.getElementById('viewer-count');
+  if(el) el.textContent = count;
+
+  function next(){
+    // Intervalo irregular entre 2.5s e 8s
+    var delay = 2500 + Math.random() * 5500;
+    setTimeout(function(){
+      var r = Math.random();
+      var change;
+      if(r < 0.62) {
+        // 62% chance de subir 1 ou 2
+        change = Math.random() < 0.7 ? 1 : 2;
+      } else if(r < 0.85) {
+        // 23% chance de ficar igual (pausa)
+        change = 0;
+      } else {
+        // 15% chance de cair 1
+        change = -1;
+      }
+      count = Math.max(482, Math.min(689, count + change));
+      if(el) el.textContent = count;
+      next();
+    }, delay);
+  }
+  next();
+})();
+</script>
     <div class="vsl-wrap rv d1">
       <div class="vsl-frame">
         <div id="ytFacade" onclick="loadYT()" role="button" tabindex="0" aria-label="Assistir apresentação do Método PD10X" onkeydown="if(event.key==='Enter'||event.key===' ')loadYT()" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#000">
