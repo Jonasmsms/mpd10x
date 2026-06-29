@@ -77,19 +77,24 @@
 <!-- VSL -->
 <div class="vsl-s" id="vsl">
   <div class="w">
-    <div class="vsl-lbl rv" style="flex-direction:column;gap:10px">
-  <span style="font-size:clamp(.78rem,2vw,.88rem);letter-spacing:.18em">ASSISTA A APRESENTAÇÃO COMPLETA ANTES DE DECIDIR</span>
-  <span id="viewer-bar" style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(.72rem,1.8vw,.8rem);letter-spacing:.1em;color:rgba(255,255,255,.75);font-family:'Barlow',sans-serif;font-weight:400;text-transform:none">
-    <span id="viewer-dot" style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;display:inline-block;flex-shrink:0"></span>
-    <span id="viewer-count" style="color:#fff;font-weight:600"></span>
-    <span>pessoas assistindo agora</span>
-  </span>
+    <div class="vsl-lbl rv" style="flex-direction:column;gap:10px;letter-spacing:0;text-transform:none">
+  <div id="viewer-bar" style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap">
+    <span id="viewer-dot"></span>
+    <span style="font-size:clamp(1rem,3vw,1.15rem);font-family:'Barlow',sans-serif;font-weight:700;color:#ffffff;letter-spacing:.04em;white-space:nowrap">
+      <span id="viewer-count"></span> pessoas assistindo agora
+    </span>
+  </div>
 </div>
 
 <style>
+#viewer-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#22c55e;box-shadow:0 0 8px #22c55e;
+  display:inline-block;flex-shrink:0;
+}
 @keyframes dotPulse{
-  0%,100%{opacity:1;box-shadow:0 0 4px #22c55e}
-  50%{opacity:.35;box-shadow:0 0 10px #22c55e}
+  0%,100%{opacity:1;box-shadow:0 0 5px #22c55e}
+  50%{opacity:.3;box-shadow:0 0 14px #22c55e}
 }
 #viewer-dot{animation:dotPulse 2.2s ease-in-out infinite}
 </style>
