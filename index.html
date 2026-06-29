@@ -471,19 +471,36 @@ function loadYT(){
 </script>
 
 <script>
-// Facebook Pixel carregado após render inicial
+// Captura fbclid da URL e salva cookie _fbc
+(function(){
+  try {
+    var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+    if(fbclid) {
+      var existing = document.cookie.split(';').find(function(c){ return c.trim().startsWith('_fbc='); });
+      if(!existing || existing.indexOf(fbclid) === -1) {
+        var fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+        document.cookie = '_fbc=' + fbc + '; max-age=7776000; path=/; SameSite=Lax';
+      }
+    }
+  } catch(e) {}
+})();
+
+// Facebook Pixel
 window.addEventListener('load', function() {
   setTimeout(function() {
-
 
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+var pageViewId = 'pv_' + Date.now() + '_' + Math.random().toString(36).substr(2,9);
+var viewContentId = 'vc_' + Date.now() + '_' + Math.random().toString(36).substr(2,9);
+
 fbq('init','1660742761748533');
-fbq('track','PageView');
-fbq('track','ViewContent',{content_name:'Método PD10X',content_category:'Curso',value:47,currency:'BRL'});
+fbq('track','PageView',{},{eventID: pageViewId});
+fbq('track','ViewContent',{content_name:'Método PD10X',content_category:'Curso',value:47,currency:'BRL'},{eventID: viewContentId});
 
 function attachPixel(){
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
@@ -491,16 +508,9 @@ function attachPixel(){
     el._pixelBound=true;
     el.addEventListener('click',function(){fbq('track','Contact')},{once:true});
   });
-  document.querySelectorAll('a[href*="kiwify"]').forEach(function(el){
-    if(el._pixelBound) return;
-    el._pixelBound=true;
-    el.addEventListener('click',function(){},{once:true});
-  });
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',attachPixel);}
 else{attachPixel();}
-
-
 
   }, 500);
 });
