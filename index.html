@@ -641,13 +641,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 else{attachPixel();}
 
 }
-// Carrega pixel só quando usuário interage (scroll, click, touch)
-// Economiza 237KB para quem sai sem interagir
-var _pe=['scroll','mousemove','touchstart','keydown'];
-function _pl(){loadPixel();_pe.forEach(function(e){window.removeEventListener(e,_pl)});}
-_pe.forEach(function(e){window.addEventListener(e,_pl,{once:true,passive:true})});
-// Fallback: carrega em 4s mesmo sem interação
-setTimeout(_pl, 4000);
+// Carrega pixel automaticamente assim que a página termina de carregar (não espera interação, então cobre 100% dos visitantes)
+if(document.readyState==='complete'){loadPixel();}else{window.addEventListener('load',loadPixel,{once:true});}
+// Fallback: carrega em 4s mesmo se o evento load atrasar
+setTimeout(loadPixel, 4000);
 </script>
 
 <!-- Aviso geolocalização — estilo neon da página -->
