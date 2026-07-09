@@ -633,11 +633,37 @@ fbq('init','1660742761748533');
 fbq('track','PageView',{},{eventID: pageViewId});
 fbq('track','ViewContent',{content_name:'Método PD10X',content_category:'Curso',value:47,currency:'BRL'},{eventID: viewContentId});
 
+// ---- API de Conversões: envia os MESMOS eventos com o MESMO eventID pelo servidor (deduplicação) ----
+function getCookie(name){var m=document.cookie.match('(^|;)\\s*'+name+'\\s*=\\s*([^;]+)');return m?m.pop():''}
+function sendCapi(eventName,eventId,customData){
+  try{
+    var payload=JSON.stringify({
+      event_name:eventName,
+      event_id:eventId,
+      event_source_url:location.href,
+      fbp:getCookie('_fbp'),
+      fbc:getCookie('_fbc'),
+      custom_data:customData||{}
+    });
+    if(navigator.sendBeacon){navigator.sendBeacon('/api/track',new Blob([payload],{type:'application/json'}));}
+    else{fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true});}
+  }catch(e){}
+}
+// pequeno atraso para o fbevents.js gravar o cookie _fbp antes do envio ao servidor
+setTimeout(function(){
+  sendCapi('PageView',pageViewId,{});
+  sendCapi('ViewContent',viewContentId,{content_name:'Método PD10X',content_category:'Curso',value:47,currency:'BRL'});
+},600);
+
 function attachPixel(){
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
     if(el._pixelBound) return;
     el._pixelBound=true;
-    el.addEventListener('click',function(){fbq('track','Contact')},{once:true});
+    el.addEventListener('click',function(){
+      var contactId='ct_'+Date.now()+'_'+Math.random().toString(36).substr(2,9);
+      fbq('track','Contact',{},{eventID:contactId});
+      sendCapi('Contact',contactId);
+    },{once:true});
   });
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',attachPixel);}
