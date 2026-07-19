@@ -313,9 +313,9 @@ Dentro do Método PD10X você aprende, <b style="color:var(--fire)">passo a pass
   <div class="w">
     <div class="rv"><div class="tag">Resultados reais</div><h2 class="sh">Quem já aplicou o método</h2></div>
     <div class="dep-g">
-      <div class="dep-card rv"><div class="dep-thumb" onclick="playDep(this,'ONpqm1STRVQ')"><img src="https://img.youtube.com/vi/ONpqm1STRVQ/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Eduardo"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Eduardo</div><div class="dep-role">Dono de hamburgueria</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
-      <div class="dep-card rv d1"><div class="dep-thumb" onclick="playDep(this,'qgmexlvRrBY')"><img src="https://img.youtube.com/vi/qgmexlvRrBY/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Gerson"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Gerson</div><div class="dep-role">Gestor de tráfego</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
-      <div class="dep-card rv d2"><div class="dep-thumb" onclick="playDep(this,'XoJZucfaFKg')"><img src="https://img.youtube.com/vi/XoJZucfaFKg/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Kauan"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Kauan</div><div class="dep-role">Dono de delivery</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/ONpqm1STRVQ?rel=0" title="Depoimento Eduardo" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Eduardo</div><div class="dep-role">Dono de hamburgueria</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv d1"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/qgmexlvRrBY?rel=0" title="Depoimento Gerson" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Gerson</div><div class="dep-role">Gestor de tráfego</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv d2"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/XoJZucfaFKg?rel=0" title="Depoimento Kauan" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Kauan</div><div class="dep-role">Dono de delivery</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
     </div>
     <div class="tc rv" style="margin-top:32px"><a href="#preco" class="btn-main" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'});return false">Quero aplicar isso no meu delivery</a></div>
   </div>
@@ -530,20 +530,6 @@ document.querySelectorAll('[data-target]').forEach(function(el){cio.observe(el)}
 
 function tM(el){var o=el.classList.contains('open');document.querySelectorAll('.mod').forEach(function(m){m.classList.remove('open')});if(!o)el.classList.add('open')}
 function tF(el){var o=el.classList.contains('open');document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});if(!o)el.classList.add('open')}
-function playDep(thumb,id){
-  var wrap=thumb.parentElement;
-  // Garante que o wrap tem position relative e aspect-ratio
-  wrap.style.cssText='position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000';
-  var iframe=document.createElement('iframe');
-  iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
-  iframe.allow='autoplay;encrypted-media';
-  iframe.allowFullscreen=true;
-  iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:none';
-  thumb.style.display='none';
-  wrap.appendChild(iframe);
-}
-
-
 // Atualiza barra de escassez
 function updateBar(vagas) {
   var pct = Math.round(((20 - vagas) / 20) * 100);
