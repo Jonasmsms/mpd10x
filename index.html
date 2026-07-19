@@ -169,12 +169,7 @@ Dentro do Método PD10X você aprende, <b style="color:var(--fire)">passo a pass
 </script>
     <div class="vsl-wrap rv d1">
       <div class="vsl-frame">
-        <div id="ytFacade" onclick="loadYT()" role="button" tabindex="0" aria-label="Assistir apresentação do Método PD10X" onkeydown="if(event.key==='Enter'||event.key===' ')loadYT()" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#000">
-          <img src="vsl-960.webp" srcset="vsl-480.webp 480w, vsl-720.webp 720w, vsl-960.webp 960w" sizes="(max-width:940px) 100vw, 900px" alt="Assistir apresentação Método PD10X" width="480" height="270" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75">
-          <div style="position:relative;z-index:2;width:72px;height:72px;background:rgba(255,85,0,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 32px rgba(255,85,0,.5)">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" style="margin-left:5px"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
+        <iframe id="ytPlayer" style="position:absolute;inset:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/5CLgWo8DUFM?playsinline=1&rel=0&modestbranding=1" title="Assistir apresentação do Método PD10X" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
         <div class="vc tl"></div><div class="vc tr"></div><div class="vc bl"></div><div class="vc br"></div>
       </div>
     </div>
@@ -584,19 +579,6 @@ updateBar(8);
     },d.delay);
   });
 })();
-</script>
-
-<script>
-function loadYT(){
-  var f=document.getElementById('ytFacade');
-  f.innerHTML='<iframe id="ytPlayer" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/5CLgWo8DUFM?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
-  var ifr=document.getElementById('ytPlayer');
-  ifr.addEventListener('load',function(){
-    setTimeout(function(){
-      try{ ifr.contentWindow.postMessage(JSON.stringify({event:'command',func:'playVideo',args:''}),'*'); }catch(e){}
-    },600);
-  });
-}
 </script>
 
 <script>
