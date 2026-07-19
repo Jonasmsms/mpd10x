@@ -8,7 +8,10 @@
 <title>Método PD10X — Anúncios para Delivery: Pedidos Direto no Seu WhatsApp</title>
 <meta name="description" content="R$5.319 em anúncios viraram R$66.768 em pedidos em um mês. O Método PD10X ensina o ecossistema completo de anúncios para delivery: pedidos direto no WhatsApp, sem taxa de aplicativo. R$97 com 7 dias de garantia.">
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-900.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-500.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-700.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-400.woff2" crossorigin>
 <link rel="preload" as="image" href="ger-640.webp" imagesrcset="ger-640.webp 640w, ger-990.webp 990w, ger-1240.webp 1240w" imagesizes="(max-width:680px) 92vw, 620px" fetchpriority="high">
 <style>
@@ -311,9 +314,9 @@ Dentro do Método PD10X você aprende, <b style="color:var(--fire)">passo a pass
   <div class="w">
     <div class="rv"><div class="tag">Resultados reais</div><h2 class="sh">Quem já aplicou o método</h2></div>
     <div class="dep-g">
-      <div class="dep-card rv"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/ONpqm1STRVQ?rel=0" title="Depoimento Eduardo" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Eduardo</div><div class="dep-role">Dono de hamburgueria</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
-      <div class="dep-card rv d1"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/qgmexlvRrBY?rel=0" title="Depoimento Gerson" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Gerson</div><div class="dep-role">Gestor de tráfego</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
-      <div class="dep-card rv d2"><div class="dep-thumb"><iframe src="https://www.youtube.com/embed/XoJZucfaFKg?rel=0" title="Depoimento Kauan" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Kauan</div><div class="dep-role">Dono de delivery</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv"><div class="dep-thumb" onclick="playDep(this,'ONpqm1STRVQ')"><img src="https://img.youtube.com/vi/ONpqm1STRVQ/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Eduardo"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Eduardo</div><div class="dep-role">Dono de hamburgueria</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv d1"><div class="dep-thumb" onclick="playDep(this,'qgmexlvRrBY')"><img src="https://img.youtube.com/vi/qgmexlvRrBY/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Gerson"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Gerson</div><div class="dep-role">Gestor de tráfego</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
+      <div class="dep-card rv d2"><div class="dep-thumb" onclick="playDep(this,'XoJZucfaFKg')"><img src="https://img.youtube.com/vi/XoJZucfaFKg/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt="Kauan"><div class="dep-play"><div class="dep-play-ic"></div></div></div><div class="dep-info"><div class="dep-stars">★★★★★</div><div class="dep-name">Kauan</div><div class="dep-role">Dono de delivery</div><div class="dep-res">→ Resultado real aplicando o método</div></div></div>
     </div>
     <div class="tc rv" style="margin-top:32px"><a href="#preco" class="btn-main" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'});return false">Quero aplicar isso no meu delivery</a></div>
   </div>
@@ -527,6 +530,19 @@ var cio=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInters
 document.querySelectorAll('[data-target]').forEach(function(el){cio.observe(el)});
 
 function tF(el){var o=el.classList.contains('open');document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});if(!o)el.classList.add('open')}
+function playDep(thumb,id){
+  var wrap=thumb.parentElement;
+  wrap.style.cssText='position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000';
+  var iframe=document.createElement('iframe');
+  iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&mute=1&playsinline=1&rel=0';
+  iframe.allow='autoplay;encrypted-media;picture-in-picture';
+  iframe.allowFullscreen=true;
+  iframe.loading='lazy';
+  iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:0';
+  thumb.style.display='none';
+  wrap.appendChild(iframe);
+}
+
 // Atualiza barra de escassez
 function updateBar(vagas) {
   var pct = Math.round(((20 - vagas) / 20) * 100);
